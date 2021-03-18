@@ -4,6 +4,7 @@
 
 @section('content')
     <h1> Qui di seguito le birre</h1>
+    <a href="{{ route('birre.create') }}">Inserisci una nuova birra</a>
     @foreach ($beers as $birra)
         <h2>Tipo : {{ $birra->tipo }} </h2>
         <ul>

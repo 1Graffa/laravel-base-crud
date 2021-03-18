@@ -18,4 +18,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/contatti','BeerController@contatti')->name('contatti');
+
 Route::resource('birre', 'BeerController');
+// questo è importantissimo, ti tiene in piedi il sistema collegato al db min 60' video 81.1

@@ -21,6 +21,14 @@ class BeerController extends Controller
         return view('beer.index', $data);
     }
 
+    public function contatti()
+    {
+        $data=[
+            'email' => 'info@birre.com'
+        ];
+        return view('contatti', $data);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -28,7 +36,7 @@ class BeerController extends Controller
      */
     public function create()
     {
-        //
+        return view('beer.create');
     }
 
     /**
@@ -39,7 +47,16 @@ class BeerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $beerNew = new Beer();
+        $beerNew->name = $data['name'];
+        $beerNew->type = $data['type'];
+        $beerNew->color = $data['color'];
+        $beerNew->volume = $data['volume'];
+        $beerNew->description = $data['description'];
+
+        $beerNew->save();
     }
 
     /**
