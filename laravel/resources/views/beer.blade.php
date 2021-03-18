@@ -3,5 +3,12 @@
 @section('title','le birre')
 
 @section('content')
-    <h1> $ciao </h1>
+    <h1> Qui di seguito le birre</h1>
+    {{-- @foreach ($Beers as $item)
+        <h2>Tipo : {{ $item->tipo }} </h2>
+        <ul>
+            <li>Colore: {{ $item->colore }}</li>
+            <li>Gradazione: {{ $item->gradazione }}</li>
+        </ul>
+    @endforeach --}}
 @endsection
