@@ -14,7 +14,7 @@ class BeerController extends Controller
      */
     public function index()
     {
-            $mie_birre = Beer::All();
+        $mie_birre = Beer::all();
         $data=[
             'beers' => $mie_birre
         ];
@@ -50,7 +50,12 @@ class BeerController extends Controller
      */
     public function show($id)
     {
-        //
+        $birra_cliccata = Beer::find($id);
+
+        $data = [
+            'birra' => $birra_cliccata
+        ];
+        return view('beer.show', $data);
     }
 
     /**

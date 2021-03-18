@@ -16,5 +16,6 @@ use App\BeerController;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
+
 Route::resource('birre', 'BeerController');
