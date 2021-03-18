@@ -9,7 +9,7 @@
                     <a class="nav-link" href="#">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('birre') }}">Birre</a>
+                    <a class="nav-link" href="#">Birre</a>
                 </li>
             </ul>
         </div>
