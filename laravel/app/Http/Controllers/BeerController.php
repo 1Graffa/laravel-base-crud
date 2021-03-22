@@ -49,14 +49,29 @@ class BeerController extends Controller
     {
         $data = $request->all();
 
+        // VALIDAZIONI DEI CAMPI
+        $request->validate([
+            'name' => 'required|unique:beers|max:255',
+            'type' => 'required|max:255',
+            'color' => 'required|max:20',
+            'volume' => 'required|max:5',
+            'description' => 'required'
+        ]);
+
         $beerNew = new Beer();
-        $beerNew->name = $data['name'];
-        $beerNew->type = $data['type'];
-        $beerNew->color = $data['color'];
-        $beerNew->volume = $data['volume'];
-        $beerNew->description = $data['description'];
+        // $beerNew->name = $data['name'];
+        // $beerNew->type = $data['type'];
+        // $beerNew->color = $data['color'];
+        // $beerNew->volume = $data['volume'];
+        // $beerNew->description = $data['description'];
+        // CI RISPARMIAMO DI SCRIVERLI AVENDO INSERITO IL FILLABLE NEL MODEL, di seguito la lina di codice che sostituisce questo elenco
+        $beerNew->fill($data);
 
         $beerNew->save();
+
+        // POST/REDIRECT/GET
+        // return redirect()->route('birre.index');
+        return redirect()->route('birre.show',$beerNew->id);
     }
 
     /**

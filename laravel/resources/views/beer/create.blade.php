@@ -4,6 +4,19 @@
 
 @section('content')
     <h1> inserisci la tua birra</h1>
+    <!-- /resources/views/post/create.blade.php -->
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <!-- Create Post Form -->
     <div class="container">
         <form method="post" action="{{ route('birre.store') }}">
             @method('POST')

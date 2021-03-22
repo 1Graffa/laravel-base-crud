@@ -4,13 +4,12 @@
 
 @section('content')
     <h1> Qui di seguito le birre</h1>
-    <a href="{{ route('birre.create') }}">Inserisci una nuova birra</a>
+    <a href="{{ route('birre.create') }}"><button class="btn btn-light">Inserisci una nuova birra</button></a>
     @foreach ($beers as $birra)
-        <h2>Tipo : {{ $birra->tipo }} </h2>
+        <h2>Nome : {{ $birra->name }} </h2>
         <ul>
-            <li>#: {{ $birra->id }}</li>
-            <li>Colore: {{ $birra->colore }}</li>
-            <li>Gradazione: {{ $birra->gradazione }}</li>
+            <li>Colore: {{ $birra->color }}</>
+            <li>Gradazione: {{ $birra->volume }}</li>
             <li><a href="{{ route('birre.show', ['birre' => $birra->id]) }}">dettagli</a></li>
             <hr style="border-color:blue;margin-left:-30px">
         </ul>
